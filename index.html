@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="1.ico">
+    <title>TwitchStuff by GOD_SAMA_</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">TwitchStuff</a>
+            </div>
+
+            <div class="pull-right collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{ active: activeTab() == '/' }"><a href="#/">Uptime Checker</a></li>
+                      <li ng-class="{ active: activeTab() == '/followage' }"><a href="#followage">Follow Age</a></li>
+                      <li ng-class="{ active: activeTab() == '/accountage' }"><a href="#accountage">Account Age</a></li>
+                    <li ng-class="{ active: activeTab() == '/emotes' }"><a href="#emotes">Emote List</a></li>
+                    <li ng-class="{ active: activeTab() == '/subage' }"><a href="#subage">Subscriber Age</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div ng-view></div>
+
+    <script src="twitch.js">
+    </script>
+
+</body>
+
+</html>

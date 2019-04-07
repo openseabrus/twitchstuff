@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="1.ico">
+    <title>TwitchStuff by GOD_SAMA_</title>
+</head>
+
+<body>
+    <div class="container" ng-app="myApp" ng-controller="emotesCtrl">
+        <h2>Emote List</h2>
+        <form class="form-inline" novalidate>
+            <div class="form-group">
+                <label for="user">Target streamer:</label>
+                <input id="streamform" class="form-control" ng-model="user" placeholder="Insert streamer name" required></input>
+                <button class="btn btn-primary {{isBtnActive()}}" ng-click="submit(user)">Check!</button>
+                <br>
+                <br>
+            </div>
+        </form>
+
+        <div ng-show="canShow">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4 class="container">Subscriber Emotes</h4>
+                </div>
+                <div id="sub1" class="col-sm-8" style="background-color:lavenderblush;">
+                    <img ng-if="emote.subscriber_only" src="{{emote.url}}" title={{emote.regex}} ng-repeat="emote in emotes"></img>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4 class="container">Non-Subscriber Emotes</h4>
+                </div>
+                <div class="col-sm-8" style="background-color:lavenderblush;">
+                    <img ng-if="!emote.subscriber_only" src="{{emote.url}}" title={{emote.regex}} ng-repeat="emote in emotes"></img>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

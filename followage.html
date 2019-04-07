@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="1.ico">
+    <title>TwitchStuff by GOD_SAMA_</title>
+</head>
+
+<body>
+
+    <div class="container" ng-app="myApp">
+        <div ng-controller="followCtrl">
+            <h2>Followage Checker</h2>
+            <form class="form-inline" novalidate>
+                <div class="form-group">
+                    <label for="user">Username:</label>
+                    <input id="streamform" class="form-control" ng-model="username" placeholder="Insert username" required>
+                    <label for="user">Target streamer:</label>
+                    <input id="streamform" class="form-control" ng-model="target" placeholder="Insert streamer name" required>
+                    <button class="btn btn-primary {{isBtnActive()}}" ng-click="submit(username, target)">Check!</button>
+                    <br>
+                    <br>
+                </div>
+            </form>
+
+            <div id="streamer_data">
+                <p>{{uptime}}</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
